@@ -242,7 +242,7 @@ input[type='number'] {
   padding: 0px 20px;
   position: absolute;
   top: 49%;
-  right: -13%;
+  right: -14%;
   transform: translate(-100%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -251,6 +251,6 @@ input[type='number'] {
 }
 
 .list li:hover .delete-btn {
-  right: -29%;
+  right: -30%;
   opacity: 1;
 }

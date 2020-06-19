@@ -11,6 +11,15 @@ export const AddTransaction = () => {
   const onSubmit = e => {
     e.preventDefault();
 
+      if (Number(transactionAmount) === 0) {
+        alert("Please Enter Correct Value");
+        return false;
+      }
+      if ((description) === "") {
+        alert("Please Enter Correct Value");
+        return false;
+      }
+
     const newTransaction = {
       id: Math.floor(Math.random() * 100000000),
       description,
@@ -18,6 +27,8 @@ export const AddTransaction = () => {
     }
 
     addTransaction(newTransaction);
+    setDescription('');
+    setTransactionAmount('')
   }
 
   return (
