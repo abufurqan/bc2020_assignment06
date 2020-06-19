@@ -11,24 +11,20 @@ export const AddTransaction = () => {
   const onSubmit = e => {
     e.preventDefault();
 
-      if (Number(transactionAmount) === 0) {
-        alert("Please Enter Correct Value");
-        return false;
-      }
-      if ((description) === "") {
-        alert("Please Enter Correct Value");
-        return false;
-      }
+    if (Number(transactionAmount) === 0) {
+      alert("Please Enter Correct Value");
+      return false;
+    }
 
     const newTransaction = {
       id: Math.floor(Math.random() * 100000000),
-      description,
+      description: description,
       transactionAmount: +transactionAmount
     }
 
-    addTransaction(newTransaction);
     setDescription('');
     setTransactionAmount('')
+    addTransaction(newTransaction);
   }
 
   return (
@@ -41,7 +37,7 @@ export const AddTransaction = () => {
               </label>
               <input type="text"
                   id="discription"
-                  placeholder="Etner desctiption of the transaction"
+                  placeholder="Enter description of the transaction" required
                   value={description}
                   onChange={(e) =>setDescription(e.target.value)}
               />
@@ -51,7 +47,7 @@ export const AddTransaction = () => {
               Amount <span>(Add Minus (-) before Amount for Expenses)</span></label>
               <input  type="number"
                       id="transactionAmount"
-                      placeholder="Etner the amount"
+                      placeholder="Etner the amount" required
                       value={transactionAmount}
                       onChange={(e) =>setTransactionAmount(e.target.value)}
               />
